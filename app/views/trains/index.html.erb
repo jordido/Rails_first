@@ -1,10 +1,13 @@
-<h1> Hola caracola</h1>
+<h1> All trains</h1>
 
-<h2><%= @z %> </h2>
-<h3>Train.id : <%= @train.id %></h3>
-Train.name : <%= @train.name %>
-<br/>
-Train.name.inspect : <%= @train.name.inspect %>
-<br/>
-Train.name.class : <%= @train.name.class %>
-<br/>
+
+<ul>
+<% @trains.each do |train| %>
+
+	<li><%= train.name %></li>
+
+<% end %>
+</ul>u>
+
+<%= @trains.inspect %>
+

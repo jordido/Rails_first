@@ -1,0 +1,12 @@
+<h1> All customers</h1>
+
+
+<ul>
+<% @customers.each do |customer| %>
+
+	<li><%= customer.name %><br/> <%= customer.address %></li>
+
+<% end %>
+</ul>u>
+
+<%= @customers.inspect %>
