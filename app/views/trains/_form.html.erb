@@ -1,0 +1,30 @@
+<%= form_for @train do |f| %>
+
+<!-- See validation errors   
+	<% @train.errors.inspect %> -->
+	<% if @train.errors.any? %>
+		<% @train.errors.full_messages.each do |message| %>
+				<%= message %>
+			<% end %>
+		<% end %>
+	
+
+	<%= f.label :name %>
+	<%= f.text_field :name, placeholder: "Train name " %>
+	<%= f.label :origin %>
+	<%= f.text_field :origin, placeholder: "Departure station" %>
+	<%= f.label :destiny %>
+	<%= f.text_field :destiny, placeholder: "Arrival station" %>
+	<%= f.label :max_capacity %>
+	<%= f.number_field :max_capacity, placeholder: "Maximum capacity" %>
+
+	<%= f.submit %>
+
+<% end %>
+
+<!-- parentesis are optional for passing the parameters. Keep in mind to understand the code!!!! -->
+
+<%= link_to("Back", trains_path) %>
+
+
+

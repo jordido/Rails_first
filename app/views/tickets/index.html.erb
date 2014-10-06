@@ -1,0 +1,23 @@
+<h1>All Tickets</h1>
+
+<%= link_to "New ticket", new_ticket_path %>
+
+<table class="tab_title">
+			<th>Ticket</th>
+			<th>Train</th>
+			<th>Customer</th>
+			<th>Actions</th>
+			<% @tickets.each do |ticket| %>
+				<tr>
+					<td><%= link_to ticket.id, ticket_path(ticket) %></td>
+					<% t = Train.find(ticket.train_id)%>
+					<td><%= t.origin+"-"+t.destiny %></td>
+					<% c = Customer.find(ticket.customer_id) %>
+					<td><%= c.name + " " + c.last_name %></td>
+					<td>	<%= link_to "Edit", edit_ticket_path(ticket) %>
+						<%= link_to "Delete", ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+</table>
+
+<%= link_to("Back", "./") %>

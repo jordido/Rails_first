@@ -1,0 +1,11 @@
+<h1>Show customer</h1>
+
+<h3>The customer name is: <%= @customer.name %></h3>
+<br/>
+
+If you want to edit, click <%= link_to "here", edit_customer_path(@customer) %>
+
+</br>
+
+
+<%= link_to "Back", customers_path %>

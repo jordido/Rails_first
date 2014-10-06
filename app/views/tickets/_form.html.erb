@@ -1,0 +1,25 @@
+<%= form_for @ticket do |f| %>
+
+<!-- See validation errors   
+	<% @ticket.errors.inspect %> -->
+	<% if @ticket.errors.any? %>
+		<% @ticket.errors.full_messages.each do |message| %>
+				<%= message %>
+			<% end %>
+		<% end %>
+	
+
+	<%= f.label :id %>
+	<%= f.number_field :id, placeholder: "ticket number" %>
+	Customer: <%= f.select :customer_id, Customer.all.collect { |c| [ c.name, c.id ] }, include_blank: true %>
+    .... Select Train: <%= f.select :train_id, Train.all.collect { |t| [ t.origin+"-"+t.destiny, t.id ] }, include_blank: true %><br />
+	<%= f.submit %>
+
+<% end %>
+
+<!-- parentesis are optional for passing the parameters. Keep in mind to understand the code!!!! -->
+
+<%= link_to("Back", trains_path) %>
+
+
+

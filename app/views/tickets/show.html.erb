@@ -1,0 +1,9 @@
+<h1>Show ticket</h1>
+
+<h3>The ticket owner is: <%= @ticket.customer %></h3>
+
+<br/>
+If you want to edit, click <%= link_to "here", edit_ticket_path(@ticket) %>
+</br>
+
+<%= link_to "Back", tickets_path %>

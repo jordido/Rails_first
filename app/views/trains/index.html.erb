@@ -1,13 +1,24 @@
 <h1> All trains</h1>
 
+<%= link_to "New train", new_train_path %>
 
-<ul>
-<% @trains.each do |train| %>
+<table class="tab_title">
+			<th>Train</th>
+			<th>Departure from</th>
+			<th>Arrival to</th>
+			<th>Max capacity</th>
+			<th>Actions</th>
+			<% @trains.each do |train| %>
+				<tr>
+					<td><%= link_to train.name, train_path(train) %></td>
+					<td>	Origin <%= train.origin %></td>
+					<td>	Destination <%= train.destiny %></td>
+					<td>	Max. capacity <%= train.max_capacity %></td>
+					<td>	<%= link_to "Edit", edit_train_path(train) %>
+						<%= link_to "Delete", train_path(train), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+</table>
 
-	<li><%= train.name %></li>
-
-<% end %>
-</ul>u>
-
-<%= @trains.inspect %>
+<%= link_to("Back", "./") %>
 

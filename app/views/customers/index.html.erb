@@ -1,12 +1,24 @@
 <h1> All customers</h1>
 
+	<table class="tab_title">
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Address</th>
+			<th>Weight</th>
+			<th>Actions</th>
+		<% @customers.each do |customer| %>
 
-<ul>
-<% @customers.each do |customer| %>
+		<tr>
+			<td><%= link_to customer.name, customer_path(customer) %></td>
+			<td> <%= customer.last_name %></td>
+			<td> <%= customer.address %></td>
+			<td> <%= customer.weight %></td>
+			<td><%= link_to "Edit", edit_customer_path(customer) %>
+			<%= link_to "Delete", customer_path(customer), method: :delete, data: { confirm: 'Are you sure?' } %></td>		
+		</tr>
+		<% end %>
+	</table>
 
-	<li><%= customer.name %><br/> <%= customer.address %></li>
 
-<% end %>
-</ul>u>
 
-<%= @customers.inspect %>
+<%= link_to "Back", "./" %>

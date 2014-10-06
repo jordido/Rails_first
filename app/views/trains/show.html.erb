@@ -1,0 +1,9 @@
+<h1>Show train</h1>
+
+<h3>The train name is: <%= @train.name %></h3>
+
+<br/>
+If you want to edit, click <%= link_to "here", edit_train_path(@train) %>
+</br>
+
+<%= link_to "Back", trains_path %>

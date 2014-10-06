@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  #get 'tickets/index'
+
   #get 'customer/index'
 
   #get 'welcome/index'
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :trains
   resources :customers
+  resources :tickets
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
