@@ -42,7 +42,7 @@ class TicketsController < ApplicationController
 	#only allows whitelisted params from the browser
 	private
 	def ticket_params
-		params.require(:ticket).permit(:id, :train_id, :customer_id)
+		params.require(:ticket).permit(:train_id, :customer_id)
 	end
 
 end

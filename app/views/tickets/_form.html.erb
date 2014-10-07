@@ -8,9 +8,6 @@
 			<% end %>
 		<% end %>
 	
-
-	<%= f.label :id %>
-	<%= f.number_field :id, placeholder: "ticket number" %>
 	Customer: <%= f.select :customer_id, Customer.all.collect { |c| [ c.name, c.id ] }, include_blank: true %>
     .... Select Train: <%= f.select :train_id, Train.all.collect { |t| [ t.origin+"-"+t.destiny, t.id ] }, include_blank: true %><br />
 	<%= f.submit %>

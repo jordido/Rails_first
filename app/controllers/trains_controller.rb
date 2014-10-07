@@ -52,7 +52,9 @@ class TrainsController < ApplicationController
 		redirect_to trains_url
 	end
 
-	#only allows whitelisted params from the browser
+	## only allows whitelisted params from the browser, 
+	## to improve security and intents of suplying admin roles through parameters
+	##  train_params is like params (it's a method that changes it) but reduced in case of necessity
 	private
 	def train_params
 		params.require(:train).permit(:name, :origin, :destiny, :max_capacity)

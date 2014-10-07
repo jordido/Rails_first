@@ -1,11 +1,21 @@
-<h1>Show customer</h1>
+<h1><%= @customer.name + " " + @customer.last_name%>'s Tickets</h1>
+<%= link_to "Edit customer", edit_customer_path(@customer) %>
+<%= link_to "New ticket", new_ticket_path %>
 
-<h3>The customer name is: <%= @customer.name %></h3>
-<br/>
-
-If you want to edit, click <%= link_to "here", edit_customer_path(@customer) %>
+<table class="tab_title">
+			<th>Ticket</th>
+			<th>Train</th>
+			<th>Actions</th>
+			<% @customer.tickets.each do |ticket| %>
+				<tr>
+					<td><%= link_to ticket.id, ticket_path(ticket) %></td>
+					<% t = Train.find(ticket.train_id)%>
+					<td><%= t.origin+"-"+t.destiny %></td>
+					<td>	<%= link_to "Edit", edit_ticket_path(ticket) %>
+						<%= link_to "Delete", ticket_path(ticket), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+</table>
 
 </br>
-
-
 <%= link_to "Back", customers_path %>

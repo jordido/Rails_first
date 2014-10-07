@@ -7,13 +7,17 @@
 			<th>Departure from</th>
 			<th>Arrival to</th>
 			<th>Max capacity</th>
+			<th>Tickets sold </th>
+			<th>Tickets available</th>
 			<th>Actions</th>
 			<% @trains.each do |train| %>
 				<tr>
 					<td><%= link_to train.name, train_path(train) %></td>
-					<td>	Origin <%= train.origin %></td>
-					<td>	Destination <%= train.destiny %></td>
-					<td>	Max. capacity <%= train.max_capacity %></td>
+					<td>	<%= train.origin %></td>
+					<td>	<%= train.destiny %></td>
+					<td>	<%= train.max_capacity %></td>
+					<td>  <%= train.tickets.size %></td>
+					<td>  <%= train.max_capacity - train.tickets.size %>
 					<td>	<%= link_to "Edit", edit_train_path(train) %>
 						<%= link_to "Delete", train_path(train), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				</tr>

@@ -20,9 +20,12 @@ body {
 }
 
 h1 {
+	margin-top: 30px;
 	background: darkseagreen;
 	color: #2F4F4F;
 	padding-left: 40px;
+	width:100%;
+	float: left;
 }
 
 .field_with_erros input {
@@ -34,26 +37,10 @@ a {
 	color: darkslategray;
 }
 
-.tab_table {
-	display: inline;
-	list-style: none;
-}
-
-.tab_content {
-	display: inline;
-	list-style: none;
-}
-
 .tab_title {
 	font-weight: bold;
 	list-style: none;
 	width: 100%;
-}
-
-.tab_content li {
-	display: inline;
-	width: 100px;
-
 }
 
 td {
@@ -64,4 +51,24 @@ td {
 th {
 	background-color: #2F4F4F;
 	color: #ffffff;
+}
+
+h2 {
+	font-weight: bold;
+	list-style: none;
+	width: 100%;
+	float: right;
+}
+
+h2 li {
+	background-color: #2F4F4F;
+	margin-top: 30px;
+	padding: 10px;
+	display: inline;
+}
+
+h2 li a {
+	color: #ffffff;
+	
+	display: inline;
 }
